@@ -8,8 +8,8 @@
 ![img07](https://github.com/user-attachments/assets/2f9cb719-c4e6-49b0-914d-0f5f59448dd4)
 
 > Exemplo:<br>
-> Pergunta: "Se eu tiver 2 maçãs e comprar mais 3, quantas terei no total?"<br>
-> Resposta CoT: "Começando com 2 maçãs e adicionando 3, o total será 2 + 1 = 3 + 1 = 4 + 1 = 5."
+> Pergunta: "Quanto é 17 vezes 3?"<br>
+> Resposta CoT: "10 vezes 3 é igual a 30.<br> 7 vezes 3 é igual a 21.<br> 30 + 21 é 51."
 
 ---
 ### Least-to-Most Prompting
@@ -49,3 +49,5 @@
 **Não importa se você treina um modelo do zero ou utiliza ajustes via prompts, o que realmente faz a diferença são as etapas intermediárias no raciocínio.**
 
 A chave está nos **passos-intermediários**.  
+
+> Observe que o método CoT e o Least-to-Most são muito semelhantes, pois ambos utilizam etapas intermediárias. 
