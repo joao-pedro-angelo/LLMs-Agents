@@ -31,6 +31,8 @@ Esse conceito está diretamente relacionado à ideia de raciocínio sem promptin
 onde caminhos de raciocínio alternativos são explorados para melhorar o desempenho em tarefas complexas.
 
 ---
+## Como calcular P(final answer | problem)
+
 ![image](https://github.com/user-attachments/assets/74172358-7809-4283-95f4-d595c9049a1b)
 
 ![image](https://github.com/user-attachments/assets/4f9b76ba-0cdc-4438-9f61-0aa2685e0586)
