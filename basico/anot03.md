@@ -1,13 +1,3 @@
-## Como acionar o raciocínio passo a passo sem usar exemplos?
-
-![image](https://github.com/user-attachments/assets/f91c6558-a82c-41e4-b602-387cca84142f)
-
----
-## Pense passo a passo
-
-Nós não precisamos de exemplos. Basta dizer "pense passo a passo". E o modelo irá gerar respostas passo a passo.
-
----
 ## LLMs como pensadores analógicos
 
 Ao resolver um problema, sempre nos beneficiamos de problemas resolvidos anteriormente, usando seu resultado ou seu método,
