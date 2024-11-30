@@ -12,8 +12,6 @@ quanto a resposta final (final answer), dados o problema (problem). Em termos ma
 
 arg max 𝑃(reasoning path, final answer | problem)
 
-arg max P(reasoning path, final answer | problem)
-
 Isso significa que o LLM avalia a probabilidade conjunta de produzir tanto os passos intermediários quanto a resposta final
 para um dado problema.
 
@@ -24,8 +22,6 @@ Em vez de priorizar o caminho de raciocínio junto com a resposta final, o objet
 da resposta final correta, considerando o problema. Isso é representado como:
 
 arg max 𝑃(final answer | problem)
-
-arg max P(final answer | problem)
 
 Durante o raciocínio, um LLM pode gerar passos intermediários desnecessários ou errados,
 que impactam negativamente na resposta final.
