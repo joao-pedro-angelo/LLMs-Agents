@@ -1,25 +1,17 @@
 ## Tipos de Prompting
 
 ---
-### Chain-of-Thought (CoT) Prompting
+### Chain-of-Thought (CoT) e Least-to-Most
 - CoT significa raciocínio em várias etapas.
-- Este método avalia extensivamente prompts que incluem etapas intermediárias, gerando resultados surpreendentes.
+- Este método avalia prompts que incluem etapas intermediárias, gerando resultados surpreendentes.
+- Least-to-Most divide o problema em partes independentes, mais fáceis e resolve o problema todo de forma incremental, em partes.
+- Observe que o método CoT e o Least-to-Most são muito semelhantes, pois ambos utilizam etapas intermediárias. 
 
-![img07](https://github.com/user-attachments/assets/2f9cb719-c4e6-49b0-914d-0f5f59448dd4)
+![image](https://github.com/user-attachments/assets/4e3afe61-9afa-483c-bab6-fdc1839d8d89)
 
 > Exemplo:<br>
 > Pergunta: "Quanto é 17 vezes 3?"<br>
 > Resposta CoT: "10 vezes 3 é igual a 30.<br> 7 vezes 3 é igual a 21.<br> 30 + 21 é 51."
-
----
-### Least-to-Most Prompting
-- Técnica que resolve problemas complexos dividindo-os em partes menores e abordando cada uma de maneira sequencial.
-
-![img08](https://github.com/user-attachments/assets/96bdd127-3a75-4ece-ab0e-e1d00839be25)
-
-> Exemplo:<br>
-> Pergunta: "Qual é a área de um triângulo com base 10 e altura 5?"<br>
-> Least-to-Most: A fórmula é base x altura / 2. Inserindo os valores para calcular a área, temos (10 x 5 / 2 = 25).
 
 ---
 ### Few-Shot Prompting
@@ -49,5 +41,3 @@
 **Não importa se você treina um modelo do zero ou utiliza ajustes via prompts, o que realmente faz a diferença são as etapas intermediárias no raciocínio.**
 
 A chave está nos **passos-intermediários**.  
-
-> Observe que o método CoT e o Least-to-Most são muito semelhantes, pois ambos utilizam etapas intermediárias. 
