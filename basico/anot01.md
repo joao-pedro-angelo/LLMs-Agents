@@ -31,7 +31,7 @@ Os agentes LLM são sistemas avançados de IA projetados para criar textos compl
 
 ![image](https://github.com/user-attachments/assets/d950a0fd-581f-4944-a3e6-fc2fa74fd128)
 
-Agentes LLM operam em ambientes diversos, sãomuito flexíveis. 
+Agentes LLM operam em ambientes diversos, são muito flexíveis. 
 Por exemplo, navegando na web e APIs online. Eles podem sentir o ambiente por meio de diferentes tipos de entradas.
 
 ---
