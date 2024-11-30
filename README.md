@@ -7,3 +7,4 @@
 3. **[Sobre o Artigo: Large Language Models as Analogical Reasoners](/basico/anot03.md)**<br>
 4. **[Decoding](/basico/anot05.md)**<br>
 5. **[Sobre o Artigo: Chain-of-Thought Reasoning Without Prompting](/basico/anot04.md)**<br>
+6. **[LLMs são modelos probabilísticos](/basico/anot06.md)**<br>
