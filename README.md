@@ -3,4 +3,4 @@
 ## Introdução
 
 1. **[Definições](/basico/anot01.md)**<br>
-2. **[Técnicas de Melhoria de LLMs](/basico/anot02.md)**<br>
+2. **[Tipos de Prompting](/basico/anot02.md)**<br>
