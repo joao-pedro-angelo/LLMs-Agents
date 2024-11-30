@@ -36,3 +36,15 @@ No artigo discutido, os autores introduzem uma variação no processo de decodin
 #### Raciocínio intrínseco
 - Os resultados sugerem que os modelos de linguagem têm raciocínio intrínseco que pode ser extraído ao ajustar o processo de geração de texto, sem a necessidade de exemplos explícitos ou engenharia de prompts.
 
+---
+![image](https://github.com/user-attachments/assets/30b66e55-ada6-4945-ae25-c6bf617dba90)
+
+![image](https://github.com/user-attachments/assets/57ba763e-459c-4e36-83fb-752592f4a527)
+
+- Cada linha representa uma resposta gerada pelo modelo com base no processo de decodificação exploratório (usando top-k decoding).
+- Algumas respostas são completas e apresentam raciocínio intermediário (Chain-of-Thought, como na linha 6), enquanto outras são respostas diretas (Even. na linha 2 ou Odd. na linha 3).
+- As probabilidades indicam o nível de confiança que o modelo atribuiu à resposta durante o processo de decodificação.
+
+- Na linha 6, o modelo fornece uma resposta completa: "Cage nasceu em 1964, um ano par". Esta resposta apresenta um raciocínio detalhado e obteve a maior probabilidade (0.978), indicando que o raciocínio intermediário reforça a confiança do modelo.
+- Respostas mais diretas (linhas 2 e 3) ou menos elaboradas têm probabilidades menores.
+
