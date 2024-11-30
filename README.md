@@ -1,4 +1,4 @@
-# Estudos sobre LLMs-Agents
+# Estudo sobre LLMs-Agents
 
 ## Introdução
 
