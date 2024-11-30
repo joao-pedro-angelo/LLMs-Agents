@@ -8,3 +8,4 @@
 4. **[Decoding](/basico/anot05.md)**<br>
 5. **[Sobre o Artigo: Chain-of-Thought Reasoning Without Prompting](/basico/anot04.md)**<br>
 6. **[LLMs são modelos probabilísticos](/basico/anot06.md)**<br>
+7. **[Sobre o Artigo: Large Language Models Can Be Easily Distracted by Irrelevant Context](/basico/anot07.md)**<br>
