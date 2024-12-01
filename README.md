@@ -11,6 +11,6 @@
 7. **[Sobre o Artigo: Large Language Models Can Be Easily Distracted by Irrelevant Context](/basico/anot07.md)**<br>
 
 ---
-## Agentic IA e AutoGen
+## Agentes IA e AutoGen
 
-1. **[Agentic IA](/autogen/anot01.md)**<br>
+1. **[Agentes IA](/autogen/anot01.md)**<br>
