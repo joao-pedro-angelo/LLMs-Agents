@@ -3,6 +3,19 @@
 > O texto abaixo foi retirado da palestra: https://youtu.be/OOdtmCMSOo4
 
 ---
+## O que são Agentes?
+
+Agentes são entidades autônomas que percebem o ambiente ao seu redor, processam informações e executam ações.
+
+Um agente é, de forma abstrata, qualquer sistema que:
+
+1. Percebe seu ambiente: Essa percepção é feita por meio de sensores, seja em hardware (ex.: câmeras, microfones) ou software (ex.: análise de dados, textos, imagens).
+2. Processa informações: O agente usa um mecanismo de decisão, que pode envolver lógica, aprendizado de máquina, heurísticas ou outras formas de computação, para escolher as ações mais adequadas.
+3. Age no ambiente: Através de atuadores (físicos ou virtuais), ele executa as ações que impactam o ambiente. Exemplos incluem enviar comandos, alterar estados de sistemas ou fornecer respostas.
+
+
+
+---
 ## Como serão as futuras aplicações de IA?
 ![img01](https://github.com/user-attachments/assets/8e97798e-ee89-4513-9b49-1bbdf15d9224)
 
@@ -92,3 +105,14 @@ Para isso, é necessário considerar diferentes padrões de interação entre os
 ## Frameworks
 
 ![img10](https://github.com/user-attachments/assets/52a5e2ce-b884-45ea-ba6b-bb48d66554ba)
+
+---
+## Agentes e AutoGen
+
+No caso de frameworks como o AutoGen, os agentes são entidades especializadas que colaboram, cada um com responsabilidades distintas, para resolver tarefas complexas.
+
+A ideia central é orquestrar múltiplos agentes com papéis específicos, como:
+
+1. Commander: Coordena as interações.
+2. Writer: Gera soluções (como códigos ou textos).
+3. Safeguard: Realiza validações.
