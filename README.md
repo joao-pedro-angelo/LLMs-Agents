@@ -15,3 +15,4 @@
 
 1. **[Agentes IA](/autogen/anot01.md)**<br>
 2. **[Introdução ao AutoGen](/autogen/anot02.md)**<br>
+3. **[Comunicação Cliente-Agentes](/autogen/anot03.md)**<br>
