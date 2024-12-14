@@ -1,7 +1,7 @@
 # Processo de Decoding
 
-O processo de decoding refere-se à etapa final na geração de texto em modelos de linguagem como GPT,
-onde o modelo converte as probabilidades de palavras preditas em uma sequência concreta de texto.
+> **Decoding** é a etapa final da geração de texto em modelos como o GPT. 
+
 Após o modelo calcular as probabilidades para cada token (palavra, símbolo ou caractere) com base em seu contexto,
 o decoding decide quais tokens serão escolhidos para formar a resposta.
 
@@ -10,7 +10,7 @@ o decoding decide quais tokens serão escolhidos para formar a resposta.
 
 #### Greedy Decoding
 - Seleciona o token com maior probabilidade em cada passo.
--  É um método simples, mas pode perder melhores respostas globais, já que busca apenas a "melhor decisão local".
+- É um método simples, mas pode perder melhores respostas globais, já que busca apenas a "melhor decisão local".
 - Problema: Pode levar a saídas previsíveis ou sem criatividade.
 
 #### Beam Search
@@ -19,7 +19,7 @@ o decoding decide quais tokens serão escolhidos para formar a resposta.
 - Problema: É mais caro computacionalmente e pode gerar respostas genéricas.
 
 #### Top-k Sampling
-- Restringe as escolhas apenas aos k tokens mais prováveis, reduzindo a probabilidade de escolher palavras menos relevantes.
+- Restringe as escolhas apenas aos k-tokens mais prováveis, reduzindo a probabilidade de escolher palavras menos relevantes.
 - Vantagem: Permite maior variabilidade enquanto mantém relevância.
 
 #### Nucleus Sampling (Top-p Sampling)
@@ -30,3 +30,4 @@ o decoding decide quais tokens serão escolhidos para formar a resposta.
 #### Temperature Scaling
 - Ajusta a distribuição de probabilidades antes da escolha, controlando a "aleatoriedade" das respostas.
 - Exemplo: Valores menores de temperatura (ex.: 0.2) tornam as respostas mais determinísticas, enquanto valores maiores (ex.: 1.0) tornam as respostas mais variadas.
+
