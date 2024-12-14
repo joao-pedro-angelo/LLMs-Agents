@@ -2,10 +2,10 @@
 
 ![00img](https://github.com/user-attachments/assets/ab14f1b6-8f8b-4a86-af2b-99049c1e586c)
 
-LLM significa large language model, um modelo de aprendizado de máquina que pode executar tarefas de processamento de linguagem natural (NLP).
-LLMs são treinados em grandes quantidades de dados de texto para aprender relações estatísticas e prever a próxima palavra ou frase em uma sequência.
+LLM é a sigla para **Large Language Model**, um modelo de aprendizado de máquina que pode executar tarefas de processamento de **Linguagem Natural** (NLP).
 
-Os LLMs geralmente são baseados em arquiteturas de aprendizado profundo, como o Transformer, desenvolvido pelo Google em 2017.
+LLMs são treinadas com grandes quantidades de dados de texto para aprender relações estatísticas e prever a próxima palavra ou frase em uma sequência.
+
 Embora os LLMs tenham a capacidade de entender e gerar linguagem humana, eles também podem herdar vieses e imprecisões dos dados nos quais são treinados.
 
 ---
@@ -25,7 +25,7 @@ Você pode pensar no prompting como uma forma de "conversa" entre o usuário e o
 O objetivo do prompting é orientar o modelo a gerar respostas mais precisas e relevantes.
 
 ---
-## Agents - Definição
+## Agentes - Definição
 
 Os agentes LLM são sistemas avançados de IA projetados para criar textos complexos que precisam de raciocínio sequencial. 
 
@@ -33,6 +33,8 @@ Os agentes LLM são sistemas avançados de IA projetados para criar textos compl
 
 Agentes LLM operam em ambientes diversos, são muito flexíveis. 
 Por exemplo, navegando na web e APIs online. Eles podem sentir o ambiente por meio de diferentes tipos de entradas.
+
+Cada agente pode ter uma função e operar em um contexto específico. Um conjunto de agentes em colaboração, forma um **sistema multi-agente**.
 
 ---
 ## Colaboração entre Múltiplos Agentes
