@@ -18,4 +18,5 @@
 2. **[Criação dos Agentes](/autogen/anot02.md)**<br>
 3. **[Comunicação Cliente-Agentes](/autogen/anot03.md)**<br>
 4. **[Reflexão](/autogen/anot04.md)**<br>
-5. **[Tools](/autogen/anot06.md)**<br>
+5. **[Custo dos Tokens](/autogen/anot07.md)**<br>
+5. **[Mais exemplos](/autogen/anot06.md)**<br>
