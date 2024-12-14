@@ -14,6 +14,7 @@
 ---
 ## AutoGen
 
-1. **[Introdução ao AutoGen](/autogen/anot02.md)**<br>
-2. **[Comunicação Cliente-Agentes](/autogen/anot03.md)**<br>
-3. **[Reflexão](/autogen/anot04.md)**<br>
+1. **[Conexão AutoGen e LLM](/autogen/anot05.md)**<br> 
+2. **[Introdução ao AutoGen](/autogen/anot02.md)**<br>
+3. **[Comunicação Cliente-Agentes](/autogen/anot03.md)**<br>
+4. **[Reflexão](/autogen/anot04.md)**<br>
