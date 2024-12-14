@@ -16,7 +16,7 @@
 
 > Site oficial do AutoGen: https://microsoft.github.io/autogen/0.2/
 
-0. **[Instalar o AutoGen no Linux](/autogen/install.md)**<br>
+0. **[Instalar o AutoGen](/autogen/install.md)**<br>
 1. **[Conexão AutoGen e LLM](/autogen/anot05.md)**<br> 
 2. **[Criação dos Agentes](/autogen/anot02.md)**<br>
 3. **[Comunicação Cliente-Agentes](/autogen/anot03.md)**<br>
