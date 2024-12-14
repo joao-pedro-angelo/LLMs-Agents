@@ -17,67 +17,50 @@ Ele vem com muitas funcionalidades internas.
 Você pode ligar e desligar cada componente e personalizá-lo para atender às necessidades do seu aplicativo.
 
 ---
-## Exemplo 01
-![img02](https://github.com/user-attachments/assets/10c9fc31-ba28-4ce3-8316-9fddc5509dd3)
+## Exemplo em Código
 
-A imagem acima mostra um exemplo de uso do framework AutoGen para criar e interagir com um agente conversacional básico.
-A ideia central é a configuração e o uso de um agente chamado ConversableAgent,
-que utiliza um modelo de linguagem como backend (neste caso, especificado no llm_config como gpt-3.5).
+```python
+# Importando o framework AutoGen
+from autogen import ConversableAgent
 
-![img03](https://github.com/user-attachments/assets/694eb437-12f9-49a8-b7af-f5695b5b96df)<br>
-![img04](https://github.com/user-attachments/assets/bc99b95b-90b0-429b-b90e-09b462990b66)
+# Configuração do modelo de linguagem (usando GPT)
+llm_config = {
+    "model": "gpt-3.5-turbo",  # Modelo escolhido
+    "api_key": "SUA_API_KEY",  # Substitua pela sua chave da OpenAI
+}
 
----
-## Conversa entre Agentes
+# Criação do agente Cathy
+cathy = ConversableAgent(
+    name="Cathy",
+    llm_config=llm_config,
+    system_message="Você é Cathy, uma comediante de stand-up que adora trocadilhos."
+)
 
-Faremos um exemplo de comédia stand-up.
-Queremos criar um aplicativo onde comediantes stand-up conversem entre si.
+# Criação do agente Joe
+joe = ConversableAgent(
+    name="Joe",
+    llm_config=llm_config,
+    system_message="Você é Joe, um comediante sarcástico que adora piadas secas."
+)
 
-Então o primeiro agente que criaremos é um agente conversável chamado Cathy.
-Neste caso, damos a ele uma mensagem do sistema para que o agente saiba que seu nome é Cathy e seu contexto.
-![img05](https://github.com/user-attachments/assets/a7357086-b414-48f0-b657-cde9d89c8be1)
+# Iniciando a conversa (Joe começa com uma mensagem inicial)
+conversation_result = joe.start_chat(
+    recipient_agent=cathy,  # Agente que vai responder
+    message="Por que o frango atravessou a rua?",
+    max_turns=2  # Número máximo de turnos
+)
 
-Vamos criar outro agente conversável chamado Joe e dar uma mensagem ao sistema.
-Então isso dá uma instrução mais específica sobre como continuar a conversa.
-![img06](https://github.com/user-attachments/assets/2dbe8c11-d6b8-4503-a01e-3d6097607647)
+# Exibindo a conversa
+for i, turn in enumerate(conversation_result["messages"]):
+    role = turn["role"]
+    content = turn["content"]
+    print(f"Turno {i + 1} - {role}: {content}")
 
-Certo, então temos dois comediantes.
+# Calculando e mostrando o uso de tokens
+token_usage = conversation_result["usage"]
+print("\nResumo do uso de tokens:")
+print(f"Tokens de prompt: {token_usage['prompt_tokens']}")
+print(f"Tokens de resposta: {token_usage['completion_tokens']}")
+print(f"Total de tokens: {token_usage['total_tokens']}")
 
-Iniciamos a conversa chamando a função de iniciar um bate-papo de um dos agentes.
-![img07](https://github.com/user-attachments/assets/cf9157c2-e707-402e-bef9-dc1960f5c48d)<br>
-Se quisermos que Joe inicie a conversa, chamaremos a função de iniciar bate-papo de Joe.
-Definiremos o destinatário como Cathy e daremos a ele a mensagem inicial.
-Definimos o máximo de turnos para 2, temos dois turnos de conversas e então terminamos.<br>
-
-![img08](https://github.com/user-attachments/assets/26079f98-064d-4499-862b-7c5b153dd506)
-
-E depois desses dois turnos, a conversa parou.
-
----
-## Outros comandos
-
-Após a conversa, nós podemos vê-la novamente na tela com o comando abaixo.
-![img09](https://github.com/user-attachments/assets/9ecb3076-8114-4185-8170-e198ce57dbb2)
-
-E você também pode inspecionar o uso do token no resultado do chat.
-Chamaremos a função de custo do resultado do chat.
-Veremos que estamos usando o modelo turbo GPT-3.5 mais barato.
-Consumimos 97 tokens de conclusão e 219 tokens de prompt.
-E o total de tokens é 316.
-E o custo do código é essa quantia em dólares.<br>
-![img10](https://github.com/user-attachments/assets/d20bc6bd-b5da-4372-a809-704a1d9dea6b)
-
-Então, em geral, poderíamos definir a conversa de diferentes maneiras.<br>
-![img11](https://github.com/user-attachments/assets/d417b5ea-dc36-45d4-9af4-32391ce2eca4)
-
-E quando você não sabe o número certo de turnos antes que a conversa termine? O que você pode fazer?<br>
-Poderíamos mudar a condição de término fornecendo uma configuração adicional chamada "is terminate message".
-Esta é uma função booleana.
-Então ela pega uma mensagem como entrada e retorna true ou false.<br>
-![img13](https://github.com/user-attachments/assets/428aa8a1-36c0-4d48-945a-e66fd8205810)
-
-Preservando o estado do Agente:<br>
-![img14](https://github.com/user-attachments/assets/14ac9553-9067-4469-a0b7-126fe095881a)
-
----
-> Esta é uma demonstração muito básica de conversa entre agentes.
+```
