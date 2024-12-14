@@ -12,7 +12,7 @@
 8. **[Sobre o Artigo: Large Language Models Can Be Easily Distracted by Irrelevant Context](/basico/anot07.md)**<br>
 
 ---
-## Agentes IA e AutoGen
+## AutoGen
 
 1. **[Introdução ao AutoGen](/autogen/anot02.md)**<br>
 2. **[Comunicação Cliente-Agentes](/autogen/anot03.md)**<br>
