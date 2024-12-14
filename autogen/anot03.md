@@ -20,35 +20,36 @@ incluindo coleta de informações, pesquisa de interesse e engajamento do client
 ## Import
 
 ![image](https://github.com/user-attachments/assets/80bcf827-4eba-4eef-8008-8af2c3e8276d)<br>
-Então aqui, usaremos a classe de agente conversável do AutoGen para realizar esses agentes.
+Então aqui, usaremos a classe de agente conversável do AutoGen para criar os agentes.
 Vamos primeiro importar esse agente conversável do AutoGen.
 
 ---
 ## Primeiro Agente
 
 ![img03](https://github.com/user-attachments/assets/8375607c-2afe-4aa0-bb03-d8419af9a942)<br>
-E então o primeiro passo é criar um agente de integração que pede informações pessoais.
-E aqui percebemos isso ao definir a mensagem do sistema como um agente de integração do cliente,
-e demos instruções detalhadas.
+O primeiro agente é o que pede informações pessoais.
 
-E estamos definindo no modo de entrada humana como "nunca" porque estamos usando um LLM para gerar resposta deste agente.
+Definimos a mensagem do sistema como um agente de integração do cliente e demos instruções detalhadas do contexto.
+
+Definimos o modo de entrada humana como "never" porque estamos usando um LLM para gerar a resposta deste agente.
 
 ---
 ## Segundo Agente
 
 ![img04](https://github.com/user-attachments/assets/f3d13978-5c70-4d7f-adc6-9e2604a00ce5)<br>
-E similarmente, vamos criar outro agente de integração que peça preferência de tópico.
-E similarmente podemos perceber, o que queremos alcançar ao definir esta mensagem do sistema.
-Então aqui, a mensagem do sistema é definida para perguntar o interesse do cliente, e preferência nos tópicos.
+Similarmente, vamos criar outro agente de integração que peça preferência de tópico.
 
-E similarmente usaremos "nunca" como modo de entrada humana e usaremos um LLM para apoiar este agente conversável.
+Podemos perceber o que queremos alcançar ao definir a mensagem do sistema.
+
+A mensagem do sistema é definida para perguntar os interesses do cliente.
+
+Usamos "never" como modo de entrada humana, pois estamos usando um LLM para apoiar este agente conversável.
 
 ---
 ## Terceiro Agente
 
 ![img05](https://github.com/user-attachments/assets/60ebaba9-1191-4337-8308-3dfd75e03e52)<br>
-E outro agente que queremos criar é o agente de engajamento do cliente que fornece fatos divertidos,
-piadas ou histórias interessantes com base nas informações pessoais do cliente do usuário e na preferência do tópico.
+Outro agente que queremos criar é o agente de engajamento do cliente que fornecepiadas ou histórias interessantes com base nas informações pessoais do cliente.
 
 E, novamente, damos instruções detalhadas sobre o comportamento desse agente de engajamento definindo
 a mensagem de sistema adequada.
@@ -57,8 +58,10 @@ a mensagem de sistema adequada.
 ## Quarto Agente
 
 ![img06](https://github.com/user-attachments/assets/fa667b17-6221-4c8e-b56f-e1ca1505801e)<br>
-Agora, em seguida, devemos definir um agente proxy do cliente para atuar como um proxy para o cliente real. 
-Observe que aqui estamos definindo o modo de entrada humana como sempre. 
+Agora, em seguida, devemos definir um agente proxy para atuar como um proxy para o cliente real.
+
+Observe que aqui estamos definindo o modo de entrada humana como always. 
+
 Para que esse agente proxy sempre possa solicitar entrada humana do cliente real.
 
 ---
@@ -67,27 +70,27 @@ Para que esse agente proxy sempre possa solicitar entrada humana do cliente real
 ![img07](https://github.com/user-attachments/assets/58312ad9-ac64-4d76-b183-6b989a7ddcf1)
 
 Então, com esses agentes construídos, agora podemos criar um chat sequencial para finalizar o processo de integração.
-Então, neste exemplo específico, cada chat é efetivamente um chat de dois agentes entre um agente de integração específico
+
+Neste exemplo específico, cada chat é efetivamente um chat de dois agentes entre um agente de integração específico
 e um agente proxy personalizado em cada chat.
 
 Em cada chat, o remetente envia uma mensagem inicial ao destinatário para iniciar a conversa e, em seguida,
 eles terão uma conversa de ida e volta até que o máximo de turnos seja atingido ou a mensagem de encerramento seja recebida.
+
 Estamos definindo o máximo de turnos para dois, para que eles possam ter no máximo dois turnos de conversa.
 
 Além disso, no cenário de chat sequencial, as tarefas, normalmente dependem umas das outras.
-Portanto, quando eles querem resumir informações do chat anterior para serem usadas no próximo chat.
 
 Neste caso, queremos usar o método summary.
-Neste exemplo, estamos usando reflection como o método summary para resumir o cliente.
-Adicionamos ainda um prompt summary como uma forma de instruir o modelo de linguagem grande sobre como fazer o resumo.
+Neste exemplo, estamos usando reflection com o método summary.
 
-Então, no segundo chat, estamos fazendo coisas semelhantes.
-Aqui, o remetente é o agente de preferência de tópico de integração.
+Adicionamos ainda um prompt summary como uma forma de instruir o modelo de linguagem sobre como fazer o resumo.
+
+No segundo chat, estamos fazendo coisas semelhantes.
+
+Neste segundo chat, o remetente é o agente de preferência de tópico de integração.
 E o destinatário é um agente proxy do cliente.
 
-E o método de resumo que estamos usando reflexão com LLM e neste momento não estamos fornecendo nenhum prompt de
-resumo personalizado.
-E isso estará usando o prompt padrão de construção.
 E no terceiro chat, temos um chat entre o agente proxy do cliente e o agente de engajamento do cliente.
 
 ---
@@ -95,8 +98,9 @@ E no terceiro chat, temos um chat entre o agente proxy do cliente e o agente de 
 
 ![image](https://github.com/user-attachments/assets/dd7b146e-8414-442c-821d-033b2f7ec281)<br>
 ![image](https://github.com/user-attachments/assets/aec7d06d-b9c2-4e65-9a1b-9ffa1a5d5be7)<br>
-Neste exemplo, você atuará como o cliente. E quando for solicitado a responder, você deve tocar em sua resposta.
-Então aqui você pode ver que estamos iniciando nosso primeiro bate-papo, que é entre o agente de informações pessoais
+Neste exemplo, você atuará como o cliente. E quando for solicitado a responder, você deve digitar sua resposta.
+
+Você pode ver que estamos iniciando nosso primeiro bate-papo, que é entre o agente de informações pessoais
 de integração e o agente de proxy do cliente.
 
 ![image](https://github.com/user-attachments/assets/eaf0f67c-96be-465d-9611-d2cbe28187ed)<br>
