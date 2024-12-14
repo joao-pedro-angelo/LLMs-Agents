@@ -1,5 +1,6 @@
-# Tools
+# Mais exemplos
 
+---
 Aqui temos um exemplo mais complexo que demonstra como usar ferramentas (tools) no AutoGen.
 
 Neste exemplo, criaremos um sistema multi-agente onde:
