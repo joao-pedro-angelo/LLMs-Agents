@@ -1,5 +1,8 @@
 ## Tipos de Prompting
 
+> Engenharia de Prompting é a prática de criar e otimizar instruções para guiar modelos de inteligência artificial (IA) a gerar respostas relevantes e precisas.<br><br>
+> Existem tipos específicos de prompting. 
+
 ---
 ### Chain-of-Thought (CoT) e Least-to-Most
 - CoT significa raciocínio em várias etapas.
