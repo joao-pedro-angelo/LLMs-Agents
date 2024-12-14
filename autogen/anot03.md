@@ -17,100 +17,79 @@ incluindo coleta de informações, pesquisa de interesse e engajamento do client
 ![img02](https://github.com/user-attachments/assets/f80245a5-53da-4cb8-b673-b945bcdaa043)<br>
 
 ---
-## Import
+## Exemplo em Código
 
-![image](https://github.com/user-attachments/assets/80bcf827-4eba-4eef-8008-8af2c3e8276d)<br>
-Então aqui, usaremos a classe de agente conversável do AutoGen para criar os agentes.
-Vamos primeiro importar esse agente conversável do AutoGen.
+```python
+from autogen import ConversableAgent
 
----
-## Primeiro Agente
+# Configuração do modelo de linguagem
+llm_config = {
+    "model": "gpt-3.5-turbo",  # Modelo LLM
+    "api_key": "SUA_API_KEY",  # Substitua pela sua chave
+}
 
-![img03](https://github.com/user-attachments/assets/8375607c-2afe-4aa0-bb03-d8419af9a942)<br>
-O primeiro agente é o que pede informações pessoais.
+# Criando o agente cliente
+cliente_agent = ConversableAgent(
+    name="ClienteAgent",
+    llm_config=llm_config,
+    system_message="Você é um agente amigável que entrevista clientes para entender seus gostos musicais.",
+    accept_user_input="always"  # Este agente sempre aceita entradas do usuário
+)
 
-Definimos a mensagem do sistema como um agente de integração do cliente e demos instruções detalhadas do contexto.
+# Criando o agente sugeridor
+sugeridor_agent = ConversableAgent(
+    name="SugeridorAgent",
+    llm_config=llm_config,
+    system_message="Você é um especialista musical que sugere músicas com base nos gostos fornecidos pelo ClienteAgent.",
+    accept_user_input="never"  # Este agente não interage diretamente com o usuário
+)
 
-Definimos o modo de entrada humana como "never" porque estamos usando um LLM para gerar a resposta deste agente.
+# Criando o agente crítico
+critico_agent = ConversableAgent(
+    name="CriticoAgent",
+    llm_config=llm_config,
+    system_message="Você é um crítico musical rigoroso que avalia as sugestões fornecidas pelo SugeridorAgent.",
+    accept_user_input="never"  # Este agente não interage diretamente com o usuário
+)
 
----
-## Segundo Agente
+# Passo 1: ClienteAgent inicia a conversa com o cliente
+# Durante a execução, o AutoGen aguarda a entrada do usuário.
+# Essa entrada é registrada no objeto de resposta, que é retornado pelo método start_chat e armazenado em cliente_resposta
+cliente_resposta = cliente_agent.start_chat(
+    recipient_agent=None,
+    message="Olá! Quais são os seus gêneros musicais favoritos?",
+    max_turns=2  # Máximo de 2 turnos para coletar informações do cliente
+)
 
-![img04](https://github.com/user-attachments/assets/f3d13978-5c70-4d7f-adc6-9e2604a00ce5)<br>
-Similarmente, vamos criar outro agente de integração que peça preferência de tópico.
+# Exibindo a interação com o cliente
+print("Interação com o cliente:")
+for msg in cliente_resposta["messages"]:
+    print(f"{msg['role']}: {msg['content']}")
 
-Podemos perceber o que queremos alcançar ao definir a mensagem do sistema.
+# Passo 2: SugeridorAgent analisa os dados coletados e sugere músicas
+preferencias_cliente = cliente_resposta["messages"][-1]["content"]  # Obtendo a última resposta do cliente
+sugestoes_resposta = sugeridor_agent.start_chat(
+    recipient_agent=None,
+    message=f"Baseado nas preferências musicais: {preferencias_cliente}, sugira músicas apropriadas.",
+    max_turns=1  # Apenas uma interação
+)
 
-A mensagem do sistema é definida para perguntar os interesses do cliente.
+# Exibindo as sugestões de músicas
+print("\nSugestões de músicas:")
+for msg in sugestoes_resposta["messages"]:
+    print(f"{msg['role']}: {msg['content']}")
 
-Usamos "never" como modo de entrada humana, pois estamos usando um LLM para apoiar este agente conversável.
+# Passo 3: CriticoAgent avalia as sugestões
+sugestoes = sugestoes_resposta["messages"][-1]["content"]  # Pegando a última resposta
+critica_resposta = critico_agent.start_chat(
+    recipient_agent=None,
+    message=f"As sugestões foram: {sugestoes}. Por favor, avalie e melhore se necessário.",
+    max_turns=1  # Apenas uma interação
+)
 
----
-## Terceiro Agente
+# Exibindo as críticas e melhorias
+print("\nCríticas e melhorias:")
+for msg in critica_resposta["messages"]:
+    print(f"{msg['role']}: {msg['content']}")
+```
 
-![img05](https://github.com/user-attachments/assets/60ebaba9-1191-4337-8308-3dfd75e03e52)<br>
-Outro agente que queremos criar é o agente de engajamento do cliente que fornecepiadas ou histórias interessantes com base nas informações pessoais do cliente.
-
-E, novamente, damos instruções detalhadas sobre o comportamento desse agente de engajamento definindo
-a mensagem de sistema adequada.
-
----
-## Quarto Agente
-
-![img06](https://github.com/user-attachments/assets/fa667b17-6221-4c8e-b56f-e1ca1505801e)<br>
-Agora, em seguida, devemos definir um agente proxy para atuar como um proxy para o cliente real.
-
-Observe que aqui estamos definindo o modo de entrada humana como always. 
-
-Para que esse agente proxy sempre possa solicitar entrada humana do cliente real.
-
----
-## Chat
-
-![img07](https://github.com/user-attachments/assets/58312ad9-ac64-4d76-b183-6b989a7ddcf1)
-
-Então, com esses agentes construídos, agora podemos criar um chat sequencial para finalizar o processo de integração.
-
-Neste exemplo específico, cada chat é efetivamente um chat de dois agentes entre um agente de integração específico
-e um agente proxy personalizado em cada chat.
-
-Em cada chat, o remetente envia uma mensagem inicial ao destinatário para iniciar a conversa e, em seguida,
-eles terão uma conversa de ida e volta até que o máximo de turnos seja atingido ou a mensagem de encerramento seja recebida.
-
-Estamos definindo o máximo de turnos para dois, para que eles possam ter no máximo dois turnos de conversa.
-
-Além disso, no cenário de chat sequencial, as tarefas, normalmente dependem umas das outras.
-
-Neste caso, queremos usar o método summary.
-Neste exemplo, estamos usando reflection com o método summary.
-
-Adicionamos ainda um prompt summary como uma forma de instruir o modelo de linguagem sobre como fazer o resumo.
-
-No segundo chat, estamos fazendo coisas semelhantes.
-
-Neste segundo chat, o remetente é o agente de preferência de tópico de integração.
-E o destinatário é um agente proxy do cliente.
-
-E no terceiro chat, temos um chat entre o agente proxy do cliente e o agente de engajamento do cliente.
-
----
-## Execução
-
-![image](https://github.com/user-attachments/assets/dd7b146e-8414-442c-821d-033b2f7ec281)<br>
-![image](https://github.com/user-attachments/assets/aec7d06d-b9c2-4e65-9a1b-9ffa1a5d5be7)<br>
-Neste exemplo, você atuará como o cliente. E quando for solicitado a responder, você deve digitar sua resposta.
-
-Você pode ver que estamos iniciando nosso primeiro bate-papo, que é entre o agente de informações pessoais
-de integração e o agente de proxy do cliente.
-
-![image](https://github.com/user-attachments/assets/eaf0f67c-96be-465d-9611-d2cbe28187ed)<br>
-E aqui você pode ver que estamos iniciando um novo bate-papo,
-que é a segunda sessão de bate-papo entre o agente de preferência de tópico e o agente de proxy do cliente.
-
-![image](https://github.com/user-attachments/assets/ccaa1816-73aa-4fbd-a725-1f53548a741c)<br>
-Esta é a mensagem do agente de engajamento do cliente.
-
----
-## Dados extras
-
-![image](https://github.com/user-attachments/assets/a223a22a-2488-40cf-ac1b-cbc13064f14b)
