@@ -15,3 +15,9 @@
 
 #### 5. Instale o AutoGen
 > pip install autogen-agentchat~=0.2
+
+#### 6. Abra o VSCode e instale a extensão Python
+
+#### 7. No VSCode, digite: CTRL + SHIFT + P e procure por "Python: Select Interpreter
+
+#### 8. Selecione o ambiente virtual
