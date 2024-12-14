@@ -16,7 +16,7 @@
 ---
 ### Few-Shot Prompting
 - Apresenta ao modelo alguns exemplos representativos no prompt antes de solicitar a resposta.
-- Útil para ajustar o contexto sem ajustar os pesos do modelo.
+- Útil para ajustar o contexto sem modificar o modelo.
 
 > Exemplo:<br>
 > Pergunta: "Sabendo que cat significa gato, qual o significado de apple?<br>
@@ -38,6 +38,3 @@
 > Exemplo: "Imagine que você é um professor de matemática. Explique o teorema de Pitágoras."
 
 ---
-**Não importa se você treina um modelo do zero ou utiliza ajustes via prompts, o que realmente faz a diferença são as etapas intermediárias no raciocínio.**
-
-A chave está nos **passos-intermediários**.  
