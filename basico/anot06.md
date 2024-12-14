@@ -5,26 +5,23 @@
 ![image](https://github.com/user-attachments/assets/c1746247-719c-4d73-90e3-afe7f602a2d0)
 
 ---
-## O que o LLM faz em decoding
+## O que o LLM faz em Decoding
 
-O modelo, ao decodificar, tenta encontrar a sequência mais provável considerando tanto o caminho de raciocínio (reasoning path)
-quanto a resposta final (final answer), dados o problema (problem). Em termos matemáticos:
+O modelo, ao decodificar, tenta encontrar a sequência mais provável considerando tanto o caminho de raciocínio **(reasoning path)** quanto a resposta final **(final answer)**, dado o problema **(problem)**.
 
-arg max 𝑃(reasoning path, final answer | problem)
-
-Isso significa que o LLM avalia a probabilidade conjunta de produzir tanto os passos intermediários quanto a resposta final
-para um dado problema.
+Em termos matemáticos: **arg max 𝑃(reasoning path, final answer | problem)**
 
 ---
 ## O que queremos
 
 Em vez de priorizar o caminho de raciocínio junto com a resposta final, o objetivo é maximizar diretamente a probabilidade
-da resposta final correta, considerando o problema. Isso é representado como:
+da resposta final correta, considerando o problema. 
 
-arg max 𝑃(final answer | problem)
+Isso é representado como: **arg max 𝑃(final answer | problem)**
 
 Durante o raciocínio, um LLM pode gerar passos intermediários desnecessários ou errados,
 que impactam negativamente na resposta final.
+
 Ao eliminar a dependência do reasoning path, o modelo pode potencialmente melhorar sua precisão.
 
 Esse conceito está diretamente relacionado à ideia de raciocínio sem prompting, usando estratégias como top-k decoding,
