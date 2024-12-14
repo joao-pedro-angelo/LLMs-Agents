@@ -14,6 +14,8 @@
 ---
 ## AutoGen
 
+> Site oficial do AutoGen: https://microsoft.github.io/autogen/0.2/
+
 1. **[Conexão AutoGen e LLM](/autogen/anot05.md)**<br> 
 2. **[Criação dos Agentes](/autogen/anot02.md)**<br>
 3. **[Comunicação Cliente-Agentes](/autogen/anot03.md)**<br>
