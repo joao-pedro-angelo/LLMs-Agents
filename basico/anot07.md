@@ -2,15 +2,14 @@
 
 ![image](https://github.com/user-attachments/assets/1e08f2b9-2692-4d54-852c-e834e99ee054)
 
-O artigo "Large Language Models Can Be Easily Distracted by Irrelevant Context" (2023)
-explora como modelos de linguagem de grande escala (LLMs) podem ser influenciados por informações irrelevantes
-presentes no contexto. 
+O artigo **"Large Language Models Can Be Easily Distracted by Irrelevant Context"** (2023)
+explora como LLMs podem ser influenciadas por informações irrelevantes presentes no contexto. 
 
 ---
 ## Tópicos abordados no artigo
 
 **1. Sensibilidade a Contexto Irrelevante:**<br>
-   Os LLMs, mesmo treinados em tarefas complexas, apresentam alta susceptibilidade a distrações quando há informações irrelevantes nos prompts. Isso sugere que os modelos não possuem um entendimento completo do contexto, mas frequentemente se baseiam em padrões ou correlações fracas.
+   Os LLMs, mesmo treinados, apresentam alta susceptibilidade à distrações quando há informações irrelevantes nos prompts. Isso sugere que os modelos não possuem um entendimento completo do contexto, mas frequentemente se baseiam em padrões ou correlações fracas.
 
 **2. Impacto nas Predições:**<br>
    A presença de informações irrelevantes pode diminuir significativamente a precisão dos modelos, pois essas distrações interferem na identificação das partes relevantes do problema.
